@@ -1,8 +1,12 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class IntStack {
     
     public ArrayList<Integer> array = new ArrayList<>();
+    //List<Integer> array = Arrays.asList(new Integer[10]);
+
 
     public int pop() throws Exception{
         if(array.isEmpty()){
