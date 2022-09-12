@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SearchMethods{
 
     public static void linearSearch(int element, int[] array){
@@ -12,6 +14,27 @@ public class SearchMethods{
         if(flag==false) System.out.println("element not found");
         
     }
+    //method overload for multi-linear search
+    public static void linearSearch(int element, int[] array, boolean multiple){
+        if(multiple){
+            ArrayList<Integer> newArr = new ArrayList<>();
+            for(int i=0;i<array.length;i++){
+                if(element==array[i]){
+                    newArr.add(i);
+                }
+            }
+            if(newArr.isEmpty())
+                System.out.println("element not found");
+            else 
+                System.out.println("element found in");
+                System.out.println(newArr.toString());
+            
+        }
+        else{
+            linearSearch(element, array);
+        }
+    }
+    
     
     private static int binarySearchInternal(int element, int[] array, int min, int max){
         int mid= (min+max)/2;

@@ -4,17 +4,17 @@ public class Driver {
 
         int[] array = inputArray();
         Scanner sc = new Scanner(System.in);
-        //System.out.println("Enter the element to be searched in the array");
-        //int element=sc.nextInt();
+        System.out.println("Enter the element to be searched in the array");
+        int element=sc.nextInt();
 
         //display(SortMethods.bubbleSort(array));
         //display(SortMethods.insertionSort(array));
         //display(SortMethods.selectionSort(array));
-        display(SortMethods.mergeSort(array,0,array.length-1));
-        System.out.println(SortMethods.count);
+        //display(SortMethods.mergeSort(array,0,array.length-1));
+        //System.out.println(SortMethods.count);
         //display(SortMethods.quickSort(array,0,array.length-1));
 
-        //SearchMethods.linearSearch(element, array);
+        SearchMethods.linearSearch(element, array,true);
         //SearchMethods.binarySearch(element, array);
     }
 
