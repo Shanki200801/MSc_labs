@@ -120,4 +120,38 @@ public class SortMethods{
     public static void display(int[] sorted) {
         System.out.println("Sorted array is " + Arrays.toString(sorted));
     }
+    public static int[] quickSort2(int[] unsorted, int low, int high){
+        if(low<high){
+        int p= partition2(unsorted, low, high);
+        quickSort2(unsorted, low, p-1);
+        quickSort2(unsorted, p+1, high);
+        }
+        return unsorted;
+    }
+    private static int partition2(int[] unsorted,int low,int high){
+        int  i=low,j=high;
+        
+        int index = unsorted[low];
+        while(i<=j){
+            while(unsorted[i]<index && i<high ){
+                i++;
+            }
+            while(unsorted[j]>index && j>=low){
+                j--;
+            }
+            if(i<j){
+                int temp = unsorted[i];
+                unsorted[i]=unsorted[j];
+                unsorted[j]=temp;
+            }
+        }
+        
+            int temp2=unsorted[j];
+            unsorted[j]=index;
+            index=temp2;
+        
+
+        
+        return j;
+    }
 }

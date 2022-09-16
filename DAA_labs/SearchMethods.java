@@ -66,4 +66,8 @@ public class SearchMethods{
         }
     }
 
+    public static void minMaxSearch(int [] array){
+        
+
+    }
 }
