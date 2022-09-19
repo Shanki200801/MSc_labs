@@ -13,9 +13,10 @@ public class Driver {
         //display(SortMethods.mergeSort(array,0,array.length-1));
         //System.out.println(SortMethods.count);
         //display(SortMethods.quickSort(array,0,array.length-1));
-        display(SortMethods.quickSort2(array,0,array.length-1));
+        //display(SortMethods.quickSort2(array,0,array.length-1));
         //SearchMethods.linearSearch(element, array,true);
         //SearchMethods.binarySearch(element, array);
+        minmaxDisplay(SearchMethods.minMaxSearch(array, 0, array.length-1));
     }
 
     private static int[] inputArray() {
@@ -32,5 +33,10 @@ public class Driver {
     
     private static void display(int[] sorted) {
         System.out.println("Sorted array is " + Arrays.toString(sorted));
+    }
+
+    private static void minmaxDisplay(int[] array){
+        System.out.println("The minimum of the given array is "+array[0]);
+        System.out.println("The maximum of the given array is "+array[1]);
     }
 }

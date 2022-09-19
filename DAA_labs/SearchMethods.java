@@ -66,7 +66,42 @@ public class SearchMethods{
         }
     }
 
-    public static void minMaxSearch(int [] array){
+    public static int[] minMaxSearch(int [] array, int min, int max){
+        int i= min, j=max;
+        int[] minmax_array = new int[2];
+        if(i==j){
+            minmax_array[0]=array[i];
+            minmax_array[1]=array[i];
+            return minmax_array;
+        }
+        else if(i==j-1){
+            if(array[i]<array[j]){
+                minmax_array[0]=array[i];
+                minmax_array[1]=array[j];
+            }
+            else{
+                minmax_array[1]=array[i];
+                minmax_array[0]=array[j];
+            }
+            return minmax_array;
+        }
+        
+            int mid= (min + max)/2;
+            int[] left_minmax = minMaxSearch(array, min, mid);
+            int[] right_minmax = minMaxSearch(array, mid+1, max);
+
+            if(left_minmax[0]<right_minmax[0])
+                minmax_array[0]=left_minmax[0];
+            else
+                minmax_array[0]=right_minmax[0];
+
+            if(left_minmax[1]>right_minmax[1])
+                minmax_array[1]=left_minmax[1];
+            else
+                minmax_array[1]=right_minmax[1];
+
+            return minmax_array;
+
         
 
     }

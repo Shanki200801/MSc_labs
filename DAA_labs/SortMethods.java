@@ -132,7 +132,7 @@ public class SortMethods{
         int  i=low,j=high;
         
         int index = unsorted[low];
-        while(i<=j){
+        while(i<j){
             while(unsorted[i]<index && i<high ){
                 i++;
             }
