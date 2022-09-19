@@ -120,6 +120,7 @@ public class SortMethods{
     public static void display(int[] sorted) {
         System.out.println("Sorted array is " + Arrays.toString(sorted));
     }
+    
     public static int[] quickSort2(int[] unsorted, int low, int high){
         if(low<high){
         int p= partition2(unsorted, low, high);

@@ -1,23 +1,23 @@
-import java.util.Scanner;
-public class StaticTesting {
-    private static String name;
-    static Scanner sc = new Scanner(System.in);
-    static{
-        System.out.println("Entered the static block of static testing class");
-    }
-    static void display(){
-        System.out.println("enter any name");
-        name = sc.nextLine();
-        System.out.println("The string was scanned using static scanner object and is assigned to static variable");
-    }
 
-    static class innerClass{
-        static void innerClassMethod(){
-            System.out.println(name + " is displayed by inner class static method");
-        }
+class OuterClass{
+    private int private_x;
+    int default_y;
+    static int static_z;
+    static class InnerStatic{
+        int newint = static_z;
     }
+    class InnerClass{
+        int newint = private_x;
+        int newnewint = default_y;
+    }
+}
+
+
+public class StaticTesting {
     public static void main(String[] args) {
-        display();
-        innerClass.innerClassMethod();
+        OuterClass outer_obj = new OuterClass();
+        OuterClass.InnerClass inner_obj = outer_obj.new InnerClass();
+        OuterClass.InnerStatic inner_static_obj = new OuterClass.InnerStatic();
     }
+    
 }
