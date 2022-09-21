@@ -4,6 +4,7 @@ public class SortMethods{
     public static int[] mergeSort(int[] unsorted, int beg, int end) {
         if(beg<end){           
             int mid = (beg+end)/2;
+            //Divide the entire array into 2 halves and call merge sort on them
             mergeSort(unsorted, beg, mid);
             mergeSort(unsorted, mid+1, end);
             merge(unsorted,beg,end,mid);           
@@ -16,14 +17,18 @@ public class SortMethods{
         int i,j,k=beg;
         int[] leftArray = new int[n1];
         int[] rightArray = new int[n2];
+
+        //Copying the half of the arrays to 2 new temporary arrays
         for( i=0;i<n1;i++)
             leftArray[i]=unsorted[beg+i];
         for( j=0;j<n2;j++)
             rightArray[j]=unsorted[mid+j+1];
 
         i=0;j=0;
-        while(i<n1&&j<n2){
-            count++;
+
+        //comparing the left and right array and adding in order
+        while(i<n1&&j<n2){            
+            count++;//to keep track of each comparisions
             if(leftArray[i]<=rightArray[j]){
                 unsorted[k]=leftArray[i];
                 i++;                 
@@ -34,6 +39,9 @@ public class SortMethods{
             }
             k++;
         }
+
+        //happens after either left or the right array runs 
+        //out and the remaining of the 2 are added
         while(i<n1){
             unsorted[k]=leftArray[i];
             i++; k++;
@@ -44,7 +52,7 @@ public class SortMethods{
         }
         
     }
-
+    //takes last element as the pivot
     public static int[] quickSort(int[] unsorted,int low, int high) {
        if(low<high){
         int p = partition(unsorted, low, high);
@@ -121,6 +129,7 @@ public class SortMethods{
         System.out.println("Sorted array is " + Arrays.toString(sorted));
     }
     
+    //takes first element as the pivot and implements algo done in class
     public static int[] quickSort2(int[] unsorted, int low, int high){
         if(low<high){
         int p= partition2(unsorted, low, high);

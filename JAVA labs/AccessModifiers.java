@@ -11,6 +11,7 @@ class externalClass{
         object1.stack2.push(50);
         object1.stack3.push(60);        
         //test2.stack1.display() not visible because it is private
+        
     }
 }
 

@@ -57,10 +57,13 @@ public class intQueue {
     }
 
     public void display(){
-        for(int i=front;i<=rear;i++){
+        int i;
+        for (i = front; i != rear; i = (++i) % array.length){
             System.out.print(array[i]+" ");
         }
+        System.out.print(array[i]);
         System.out.println("");
+        return;
     }
 
     public static void main(String[] args) {
