@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Character {
+class Character2 {
     
     static{
         System.out.println("This is a program to demonstrate static blocks, mathods and variables");
@@ -37,11 +37,11 @@ class Character {
  */
 public class StaticClassAndStuff {
     public static void main(String[] args) {
-        Character ch1 = new Character();
-        Character.getName();
-        Character.searchScream();
+        Character2 ch1 = new Character2();
+        Character2.getName();
+        Character2.searchScream();
 
-        Character.Pets newPet = new Character.Pets();
+        Character2.Pets newPet = new Character2.Pets();
         newPet.age =5;
         newPet.kind="dragon";
         newPet.name="Scooby";
