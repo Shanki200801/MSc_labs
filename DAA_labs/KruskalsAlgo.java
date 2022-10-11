@@ -1,8 +1,6 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class KruskalsAlgo {
     public static void main(String[] args) {
@@ -31,27 +29,32 @@ public class KruskalsAlgo {
         
         int total_cost = 0;
 
-        //Using treeset to get an array of non repeating, ascending order array of Integers
-        TreeSet<Integer> ts = new TreeSet<Integer>();
-
-        //traversing through all elements of cost matrix and adding them to tree set
+        //Using Arraylist to get an array of edge costs
+        ArrayList<Integer> as = new ArrayList<>();
+        //because graphs are non directed cost adj matrix are symmetric
+        //traversing through only upper triangle elements of cost matrix and adding them to tree set
         for(int i =0;i<n;i++){
-            for(int j=0;j<n;j++){
-                ts.add(cost_matrix[i][j]);
+            for(int j=i+1;j<n;j++){
+                as.add(cost_matrix[i][j]);               
             }
         }
-
-        //converting tree set to Integer array
-        Integer[] edgeSet = ts.toArray(new Integer[ts.size()]);
+        //sorting the elements of the array
+        Collections.sort(as);
+        //converting ArrayList to Integer array which is totally unnecessary but oh well
+        Integer[] edgeSet = as.toArray(new Integer[as.size()]);
         
         ArrayList<Edge> edge_set=new ArrayList<Edge>();
         
-        //
-        for(int x=0;x<n-1;x++){
+        //parsing through each edges in array list till n-1 edges are added 
+        for(int x=0;edge_set.size()<n-1;x++){
+
+            //parsing the upper triangle again to check where the least element exists .. 
             for(int i=0;i<n;i++){
                 for(int j=i+1;j<n;j++){
                     if(cost_matrix[i][j]==edgeSet[x]){
                         Edge e = new Edge(i, j, cost_matrix[i][j]);
+
+                        //adding the edges to edge set list if the said list is empty or it doesnt form loops
                         if(edge_set.isEmpty()){
                             edge_set.add(e);
                             break;
@@ -69,6 +72,8 @@ public class KruskalsAlgo {
                 }
             }
         }
+
+        //To print the final edges and summing their costs
         System.out.println("Edges are ");        
         for(Edge e:edge_set){
             total_cost+=e.cost;
@@ -78,6 +83,7 @@ public class KruskalsAlgo {
     }    
 }
 
+//Edge class contains properties of an edge
 class Edge{
     int vertex1;
     int vertex2;
