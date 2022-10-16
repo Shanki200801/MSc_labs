@@ -99,5 +99,6 @@ public class MinimumSpanningTree {
                 System.out.print("\t"+spanning[i][j]);
         }
         System.out.print("\n\nTotal cost of spanning tree="+total_cost);
+     
     }
 }
