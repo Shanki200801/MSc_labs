@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -14,6 +15,9 @@ public class KruskalsAlgo {
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 cost_matrix[i][j] = sc.nextInt();
+                if(i==j){
+                    cost_matrix[i][j]=999;
+                }
             }
         }
 
@@ -41,7 +45,7 @@ public class KruskalsAlgo {
         //sorting the elements of the array
         Collections.sort(as);
         //converting ArrayList to Integer array which is totally unnecessary but oh well
-        Integer[] edgeSet = as.toArray(new Integer[as.size()]);
+        Integer[] cost_set = as.toArray(new Integer[as.size()]);
         
         ArrayList<Edge> edge_set=new ArrayList<Edge>();
         
@@ -51,7 +55,7 @@ public class KruskalsAlgo {
             //parsing the upper triangle again to check where the least element exists .. 
             for(int i=0;i<n;i++){
                 for(int j=i+1;j<n;j++){
-                    if(cost_matrix[i][j]==edgeSet[x]){
+                    if(cost_matrix[i][j]==cost_set[x]){
                         Edge e = new Edge(i, j, cost_matrix[i][j]);
 
                         //adding the edges to edge set list if the said list is empty or it doesnt form loops
@@ -60,13 +64,27 @@ public class KruskalsAlgo {
                             break;
                         }
                         else{
-                            for(Edge es:edge_set){
-                                if(es.vertex1!=e.vertex2&&es.vertex2!=e.vertex1){
-                                    edge_set.add(e);
-                                    break;
+                            boolean isCycle =false;
+                            //TODO need to rethink about checking for loops
+                            //current working logic: check if new edge makes links 
+                            for(int y=0;y<edge_set.size();y++){
+                                if(e.vertex1==edge_set.get(y).vertex1){
+                                    for(int z=0;z<edge_set.size();z++){
+                                        if(e.vertex2==edge_set.get(z).vertex2){
+                                            isCycle=true;
+                                        }
+                                    }
                                 }
-
+                                //probably not required as we only traverse upper half
+                                if(e.vertex2==edge_set.get(y).vertex1){
+                                    for(int z=0;z<edge_set.size();z++){
+                                        if(e.vertex1==edge_set.get(z).vertex2){
+                                            isCycle=true;
+                                        }
+                                    }
+                                }
                             }
+                            if(!isCycle) edge_set.add(e);
                         }
                     }
                 }
@@ -82,7 +100,6 @@ public class KruskalsAlgo {
         return total_cost;
     }    
 }
-
 //Edge class contains properties of an edge
 class Edge{
     int vertex1;
@@ -93,4 +110,9 @@ class Edge{
         this.vertex2= vertex2;
         this.cost = cost;
     }
+    Edge(int vertex1,int vertex2){
+        this.vertex1=vertex1;
+        this.vertex2= vertex2;
+    }
+    
 }
