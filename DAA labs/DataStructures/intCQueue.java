@@ -4,10 +4,10 @@ package DataStructures;
  * intCQueue
  */
 public class intCQueue extends intQueue  {
-    intCQueue(int size){
+    public intCQueue(int size){
         super(size);    
    }
-   intCQueue(){
+   public intCQueue(){
     super();
    }
 
@@ -21,6 +21,7 @@ public class intCQueue extends intQueue  {
     if(front==rear){
         t=array[front];
         front=-1;rear=-1;
+        return t;
     }
     t=array[front];
     front++;

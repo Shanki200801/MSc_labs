@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -35,6 +34,7 @@ public class KruskalsAlgo {
 
         //Using Arraylist to get an array of edge costs
         ArrayList<Integer> as = new ArrayList<>();
+        boolean[] visited = new boolean[n];
         //because graphs are non directed cost adj matrix are symmetric
         //traversing through only upper triangle elements of cost matrix and adding them to tree set
         for(int i =0;i<n;i++){
@@ -61,30 +61,25 @@ public class KruskalsAlgo {
                         //adding the edges to edge set list if the said list is empty or it doesnt form loops
                         if(edge_set.isEmpty()){
                             edge_set.add(e);
+                            visited[i]=true;
+                            visited[j]=true;
                             break;
                         }
                         else{
                             boolean isCycle =false;
-                            //TODO need to rethink about checking for loops
-                            //current working logic: check if new edge makes links 
-                            for(int y=0;y<edge_set.size();y++){
-                                if(e.vertex1==edge_set.get(y).vertex1){
-                                    for(int z=0;z<edge_set.size();z++){
-                                        if(e.vertex2==edge_set.get(z).vertex2){
-                                            isCycle=true;
-                                        }
-                                    }
-                                }
-                                //probably not required as we only traverse upper half
-                                if(e.vertex2==edge_set.get(y).vertex1){
-                                    for(int z=0;z<edge_set.size();z++){
-                                        if(e.vertex1==edge_set.get(z).vertex2){
-                                            isCycle=true;
-                                        }
-                                    }
-                                }
+                            //Seems to be working
+                            if(visited[i]==true && visited[j]==true){isCycle=true;}
+                            if(!isCycle) {
+                                
+                                edge_set.add(e);
+
+                                if(visited[i]) visited[i]=false;
+                                else visited[i]=true;
+
+                                if(visited[j]) visited[j]=false;
+                                else visited[j]=true;
                             }
-                            if(!isCycle) edge_set.add(e);
+                            
                         }
                     }
                 }

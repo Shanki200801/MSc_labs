@@ -44,7 +44,7 @@ public class PrimsAlgo {
                 if(visited[i]){
                     //parsing through all edges of visited
                     for(int j=0;j<n;j++){
-                        if(cost_matrix[i][j]<=min && !  visited[j]){
+                        if(cost_matrix[i][j]<=min && !visited[j]){
                             //when we find a edge cost which is smaller the minima
                             min = cost_matrix[i][j];
                             edge_start=i;
