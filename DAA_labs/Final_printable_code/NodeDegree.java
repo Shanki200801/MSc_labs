@@ -1,9 +1,11 @@
+package Final_printable_code;
+
 /*Program to find the total number of edges connected to a node  */
 /*Works on both directed and non directed graphs */
 
 import java.util.Scanner;
 
-public class DegreeOfNode {
+public class NodeDegree {
 
     //private method to input edge_matrix and output the degree array of nodes 
     private static int[] getDegreeArray(int[][] edge_matrix){
