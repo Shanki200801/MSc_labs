@@ -5,9 +5,8 @@ public class GraphSearching {
 
     int n;
     boolean[] visited;
-    GraphSearching(int[][] cost_matrix){
-        n=cost_matrix.length;
-        visited= new boolean[cost_matrix.length];
+    GraphSearching(int n){     
+        visited= new boolean[n];
     }   
     ArrayList<Integer> traversal_arr = new ArrayList<>();
    
@@ -72,11 +71,11 @@ public class GraphSearching {
         System.out.println("Enter starting node");
         int s_node = sc.nextInt();
 
-        GraphSearching gs1 = new GraphSearching(cost_matrix);
+        GraphSearching gs1 = new GraphSearching(cost_matrix.length);
         gs1.rBFS(cost_matrix,s_node);
         System.out.println("Traversal order in breadth first search is "+(gs1.traversal_arr));
 
-        GraphSearching gs2 = new GraphSearching(cost_matrix);
+        GraphSearching gs2 = new GraphSearching(cost_matrix.length);
         gs2.DFS(cost_matrix,s_node);
         System.out.println("Traversal order in depth first search is "+(gs2.traversal_arr));
         
