@@ -22,3 +22,7 @@ F=np.dot(E,D)
 G = np.dot(A,F)
 end = time.time()
 print(f"Time is {end - start: .10f}")
+
+dicti = {"h":5,"a":5, "b":3, "k":4}
+dicti = sorted(dicti.items(),key=lambda x:(-x[1],x[0]))[:3]
+print(dicti)
