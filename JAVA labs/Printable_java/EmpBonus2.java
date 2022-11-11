@@ -1,16 +1,22 @@
+/*-----------------------------------------------------------
+Program to provide a list employees bonus of 5%
+@Author - Shashank
+-------------------------------------------------------------*/
+
 package Printable_java;
 
 import java.util.Scanner;
 
 import Printable_java.Work.Employee;
 
-public class Eighth {
+public class EmpBonus2 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of employees");
         int n = sc.nextInt();
         sc.nextLine();
+        // Creating an array of Employees
         Employee[] emp_list = new Employee[n];
 
         System.out.println("Enter the name, salary and age of the list of employees");
@@ -20,6 +26,7 @@ public class Eighth {
             int salary = sc.nextInt();
             int age = sc.nextInt();
             sc.nextLine();
+            // Initializing each member of the array
             emp_list[i] = new Employee(name, salary, age);
         }
 

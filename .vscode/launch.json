@@ -1,0 +1,560 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch MultiThreadApp",
+            "request": "launch",
+            "mainClass": "Printable_java.MultiThreadApp",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionDriver",
+            "request": "launch",
+            "mainClass": "Printable_java.SelectionDriver",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ExceptionHandler",
+            "request": "launch",
+            "mainClass": "Printable_java.ExceptionHandler",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ThisClassOuter",
+            "request": "launch",
+            "mainClass": "Printable_java.ThisClassOuter",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiInherit",
+            "request": "launch",
+            "mainClass": "Printable_java.MultiInherit",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch SuperOverride",
+            "request": "launch",
+            "mainClass": "Printable_java.SuperOverride",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSort",
+            "request": "launch",
+            "mainClass": "Printable_java.BubbleSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch EmpBonus1",
+            "request": "launch",
+            "mainClass": "Printable_java.EmpBonus1",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch LinSearchOverload",
+            "request": "launch",
+            "mainClass": "Printable_java.LinSearchOverload",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch PasswordValidator",
+            "request": "launch",
+            "mainClass": "Printable_java.PasswordValidator",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ObjCounter",
+            "request": "launch",
+            "mainClass": "Printable_java.ObjCounter",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StatsOpsCLargs",
+            "request": "launch",
+            "mainClass": "Printable_java.StatsOpsCLargs",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnaPanaGram",
+            "request": "launch",
+            "mainClass": "Printable_java.AnaPanaGram",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringOps",
+            "request": "launch",
+            "mainClass": "Printable_java.StringOps",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fourth",
+            "request": "launch",
+            "mainClass": "Printable_java.Fourth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Thirteen",
+            "request": "launch",
+            "mainClass": "Printable_java.Thirteen",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Twelth",
+            "request": "launch",
+            "mainClass": "Printable_java.Twelth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tenth",
+            "request": "launch",
+            "mainClass": "Printable_java.Tenth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ninth",
+            "request": "launch",
+            "mainClass": "Printable_java.Ninth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sixth",
+            "request": "launch",
+            "mainClass": "Printable_java.Sixth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fifth",
+            "request": "launch",
+            "mainClass": "Printable_java.Fifth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnagramChecker",
+            "request": "launch",
+            "mainClass": "AnagramChecker",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayClass_AccessModifiers",
+            "request": "launch",
+            "mainClass": "ArrayClass_AccessModifiers",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch CLArgs",
+            "request": "launch",
+            "mainClass": "CLArgs",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Constants",
+            "request": "launch",
+            "mainClass": "Constants",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConstructorOverloading",
+            "request": "launch",
+            "mainClass": "ConstructorOverloading",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ControlStatements",
+            "request": "launch",
+            "mainClass": "ControlStatements",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch DataMembersMethods",
+            "request": "launch",
+            "mainClass": "DataMembersMethods",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntStack",
+            "request": "launch",
+            "mainClass": "DataStructures.IntStack",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch intCQueue",
+            "request": "launch",
+            "mainClass": "DataStructures.intCQueue",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch intQueue",
+            "request": "launch",
+            "mainClass": "DataStructures.intQueue",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch DegreeOfNode",
+            "request": "launch",
+            "mainClass": "DegreeOfNode",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch DijkstraAlgo",
+            "request": "launch",
+            "mainClass": "DijkstraAlgo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Driver",
+            "request": "launch",
+            "mainClass": "Driver",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinarySearch",
+            "request": "launch",
+            "mainClass": "Final_printable_code.BinarySearch",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch BubbleSort",
+            "request": "launch",
+            "mainClass": "Final_printable_code.BubbleSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch DijikstrasAlgo",
+            "request": "launch",
+            "mainClass": "Final_printable_code.DijikstrasAlgo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch FloydWarshall",
+            "request": "launch",
+            "mainClass": "Final_printable_code.FloydWarshall",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch InsertionSort",
+            "request": "launch",
+            "mainClass": "Final_printable_code.InsertionSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch LinearSearch",
+            "request": "launch",
+            "mainClass": "Final_printable_code.LinearSearch",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxMinDandC",
+            "request": "launch",
+            "mainClass": "Final_printable_code.MaxMinDandC",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MergeSort",
+            "request": "launch",
+            "mainClass": "Final_printable_code.MergeSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch NodeDegree",
+            "request": "launch",
+            "mainClass": "Final_printable_code.NodeDegree",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch QueueDemo",
+            "request": "launch",
+            "mainClass": "Final_printable_code.QueueDemo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "Final_printable_code.QuickSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch SelectionSort",
+            "request": "launch",
+            "mainClass": "Final_printable_code.SelectionSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StackDemo",
+            "request": "launch",
+            "mainClass": "Final_printable_code.StackDemo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch TransClosure",
+            "request": "launch",
+            "mainClass": "Final_printable_code.TransClosure",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch TraversalBFS",
+            "request": "launch",
+            "mainClass": "Final_printable_code.TraversalBFS",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch TraversalDFS",
+            "request": "launch",
+            "mainClass": "Final_printable_code.TraversalDFS",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ZeroOneKnapSack",
+            "request": "launch",
+            "mainClass": "Final_printable_code.ZeroOneKnapSack",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch GraphSearching",
+            "request": "launch",
+            "mainClass": "GraphSearching",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch InbuiltMethods",
+            "request": "launch",
+            "mainClass": "InbuiltMethods",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch InheritFinal",
+            "request": "launch",
+            "mainClass": "InheritFinal",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch IntFixedArray",
+            "request": "launch",
+            "mainClass": "IntFixedArray",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch KnapSack",
+            "request": "launch",
+            "mainClass": "KnapSack",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch KruskalsAlgo",
+            "request": "launch",
+            "mainClass": "KruskalsAlgo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MethodOverloading",
+            "request": "launch",
+            "mainClass": "MethodOverloading",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MinimumSpanningTree",
+            "request": "launch",
+            "mainClass": "MinimumSpanningTree",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultiThreadingExample",
+            "request": "launch",
+            "mainClass": "MultiThreadingExample",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch MultipleInheritence",
+            "request": "launch",
+            "mainClass": "MultipleInheritence",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ObjCounter",
+            "request": "launch",
+            "mainClass": "ObjCounter",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch PrimsAlgo",
+            "request": "launch",
+            "mainClass": "PrimsAlgo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eighth",
+            "request": "launch",
+            "mainClass": "Printable_java.Eighth",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fifteen",
+            "request": "launch",
+            "mainClass": "Printable_java.Fifteen",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch First",
+            "request": "launch",
+            "mainClass": "Printable_java.First",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Second",
+            "request": "launch",
+            "mainClass": "Printable_java.Second",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Third",
+            "request": "launch",
+            "mainClass": "Printable_java.Third",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch RegexDemo",
+            "request": "launch",
+            "mainClass": "RegexDemo",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StaticClassAndStuff",
+            "request": "launch",
+            "mainClass": "StaticClassAndStuff",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StaticTesting",
+            "request": "launch",
+            "mainClass": "StaticTesting",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringOps",
+            "request": "launch",
+            "mainClass": "StringOps",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch TryCatchBlock",
+            "request": "launch",
+            "mainClass": "TryCatchBlock",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch WeirdProgram",
+            "request": "launch",
+            "mainClass": "WeirdProgram",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch WordJumbler",
+            "request": "launch",
+            "mainClass": "WordJumbler",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch childClass",
+            "request": "launch",
+            "mainClass": "childClass",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch externalClass",
+            "request": "launch",
+            "mainClass": "externalClass",
+            "projectName": "MSc Labs_9d41fb38"
+        }
+    ]
+}

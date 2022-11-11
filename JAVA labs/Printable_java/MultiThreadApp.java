@@ -1,10 +1,16 @@
+/*-----------------------------------------------------------
+Program to demonstrate multithreading 
+@Author - Shashank
+-------------------------------------------------------------*/
 package Printable_java;
 
-public class Fifteen extends Thread {
+public class MultiThreadApp extends Thread {
 
     public int rand;
 
     public class Job1 extends Thread {
+
+        // Thread one generates the random integer
         public void run() {
             while (true) {
                 try {
@@ -12,12 +18,14 @@ public class Fifteen extends Thread {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                // Creates a random number between 0 to 10
                 rand = (int) (Math.random() * (10 - 0 + 1) + 0);
                 System.out.println("Original number " + rand);
             }
         }
     }
 
+    // Job2 thread squares and displays the generated integer
     public class Job2 extends Thread {
         public void run() {
             while (true) {
@@ -33,6 +41,7 @@ public class Fifteen extends Thread {
         }
     }
 
+    // job3 cubes and displays the generated integer
     public class Job3 extends Thread {
         public void run() {
             while (true) {
@@ -49,7 +58,7 @@ public class Fifteen extends Thread {
     }
 
     public static void main(String[] args) {
-        Fifteen obj = new Fifteen();
+        MultiThreadApp obj = new MultiThreadApp();
         obj.new Job1().start();
         obj.new Job2().start();
         obj.new Job3().start();
