@@ -1,4 +1,6 @@
-public class MultiThreadingExample extends Thread {
+package Printable_java;
+
+public class Fifteen extends Thread {
 
     public int rand;
 
@@ -47,7 +49,7 @@ public class MultiThreadingExample extends Thread {
     }
 
     public static void main(String[] args) {
-        MultiThreadingExample obj = new MultiThreadingExample();
+        Fifteen obj = new Fifteen();
         obj.new Job1().start();
         obj.new Job2().start();
         obj.new Job3().start();
