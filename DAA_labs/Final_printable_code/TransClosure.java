@@ -42,31 +42,32 @@ public class TransClosure {
         }
     }
 
-    public static void main(String[] args) { 
-        
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of edges initially");
         int n = sc.nextInt();
 
         List<Edge> edges = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            System.out.println("Edge "+ i+1);
+        for (int i = 0; i < n; i++) {
+            System.out.println("Edge " + (i + 1));
             System.out.println("Enter source");
             int source = sc.nextInt();
             System.out.println("Enter destination");
             int destination = sc.nextInt();
             edges.add(new Edge(source, destination));
         }
-        
-        final int N = 4; 
-        Graph graph = new Graph(edges, N); 
-        byte[][] C = new byte[N][N]; 
-        System.out.println("TRANSITIVE CLOSURE:-\n"); 
-        for (int v = 0; v < N; v++) { 
-            C[v][v] = 1; 
-            DFS(graph, C, v, v); 
-            for (int u = 0; u < N; u++) System.out.print(C[v][u] + " "); 
-            System.out.println(); 
-        } 
+
+        final int N = n + 1;
+        Graph graph = new Graph(edges, N);
+        byte[][] C = new byte[N][N];
+        System.out.println("TRANSITIVE CLOSURE:-\n");
+        for (int v = 0; v < N; v++) {
+            C[v][v] = 1;
+            DFS(graph, C, v, v);
+            for (int u = 0; u < N; u++)
+                System.out.print(C[v][u] + " ");
+            System.out.println();
+        }
     }
 }

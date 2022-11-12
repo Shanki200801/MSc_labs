@@ -1,94 +1,130 @@
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class KnapSack {
+
+    int weight;
+
+    public KnapSack(int weight, Comparator<Item> comparator) {
+        items = new PriorityQueue<>(comparator);
+        this.weight = weight;
+    }
+
+    static Comparator<Item> byWeight = new Comparator<Item>() {
+
+        @Override
+        public int compare(Item first, Item second) {
+            return first.weight - second.weight;
+        }
+
+    };
+
+    static Comparator<Item> byProfit = new Comparator<Item>() {
+
+        @Override
+        public int compare(Item first, Item second) {
+            return second.profit - first.profit;
+        }
+
+    };
+
+    static Comparator<Item> byPWRatio = new Comparator<Item>() {
+
+        @Override
+        public int compare(Item first, Item second) {
+            return first.profit / first.weight - second.profit / second.weight;
+        }
+
+    };
+
+    PriorityQueue<Item> items;
+
+    private int currentWeight = 0;
+
+    public void fillKnapsack(List<Item> items) {
+        this.items.addAll(items);
+    }
+
+    public List<Item> getSack() {
+        List<Item> sack = new ArrayList<>();
+
+        while (currentWeight + items.peek().weight <= weight) {
+            currentWeight += items.peek().weight;
+            sack.add(items.poll());
+        }
+        return sack;
+    }
+
+    public class Item {
+        public Item(int weight, int price, int position) {
+            this.position = position;
+            this.weight = weight;
+            this.profit = price;
+        }
+
+        int weight;
+        int profit;
+        int position;
+
+        @Override
+        public String toString() {
+            return (position) + " [ profit = " + profit + ", weight = " + weight + " ]";
+        }
+    }
+
     public static void main(String[] args) {
-        int n;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of objects");
-        n=sc.nextInt();
-        SackObject[] ObjArray = new SackObject[n];
-        
-        for(int i=0;i<n;i++){
-            ObjArray[i] = new SackObject();
-            System.out.println("Enter the weight and profit of object : "+i);
-            ObjArray[i].weight=sc.nextInt();
-            ObjArray[i].profit=sc.nextInt();
-            ObjArray[i].objid = i;
-            ObjArray[i].profit_weight_ratio = (double) (ObjArray[i].profit/ObjArray[i].weight);
-            ObjArray[i].fraction = 0.0;
-        }
-        System.out.println("\nEnter the max capactiy of the knapsack");
-        Double max_cap = sc.nextDouble();
-        Double max_profit = 0.0;
-        //according to weight
-        Arrays.sort(ObjArray,(a,b)->a.weight.compareTo(b.weight));
-        System.out.println("\nAccording to weight");
-        max_profit= knapsackSolve(ObjArray, max_cap);
-        int flag = 0;
-        //according to profit
-        Arrays.sort(ObjArray,(a,b)->a.profit.compareTo(b.profit));
-        System.out.println("\nAccording to profit");
-        if(knapsackSolve(ObjArray, max_cap)>max_profit){
-            max_profit= knapsackSolve(ObjArray, max_cap);
-            flag=2;
-        }
-        //according to profit weight ratio
-        Arrays.sort(ObjArray,(a,b)->a.profit_weight_ratio.compareTo(b.profit_weight_ratio));
-        System.out.println("\nAccording to ratio");
-        if(knapsackSolve(ObjArray, max_cap)>max_profit){
-            max_profit= knapsackSolve(ObjArray, max_cap);
-            flag=3;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter weight of knapsack: ");
+        int weight = scanner.nextInt();
+        KnapSack knapsackByProfit = new KnapSack(weight, byProfit);
+        KnapSack knapsackByWeight = new KnapSack(weight, byWeight);
+        KnapSack knapsackbyRatio = new KnapSack(weight, byPWRatio);
+        System.out.print("\nEnter number of items: ");
+        int count = scanner.nextInt();
+
+        for (int i = 0; i < count; i++) {
+            System.out.println("Item " + (i + 1));
+            System.out.print("Price: ");
+            int p = scanner.nextInt();
+            System.out.print("Weight: ");
+            int w = scanner.nextInt();
+            System.out.println();
+            Item item = knapsackByProfit.new Item(w, p, i + 1);
+            knapsackByProfit.items.add(item);
+            knapsackByWeight.items.add(item);
+            knapsackbyRatio.items.add(item);
         }
 
-        if(flag==3){
-            System.out.println("solution set is obtained when arranged acc to ratio\n");
-        }
-        if(flag==2){
-            System.out.println("solution set is obtained when arranged acc to profit\n");
-        }
-        if(flag==1){
-            System.out.println("solution set is obtained when arranged acc to weight\n");
-        }
-        System.out.printf("Maximum profit possible is %.2f\n",max_profit);
-        
+        scanner.close();
 
-        
- 
-              
+        System.out.println("\nKnapsack contents are: ");
+
+        int totalProfitByWeight = 0, totalProfitByProfit = 0, totalProfitByRatio = 0;
+        for (Item item : knapsackByWeight.getSack()) {
+            System.out.println(item);
+            totalProfitByWeight += item.profit;
+        }
+
+        System.out.println();
+
+        for (Item item : knapsackByProfit.getSack()) {
+            System.out.println(item);
+            totalProfitByProfit += item.profit;
+        }
+        System.out.println();
+
+        for (Item item : knapsackbyRatio.getSack()) {
+            System.out.println(item);
+            totalProfitByRatio += item.profit;
+        }
+
+        System.out
+                .println("\n\nDescending Order of profit.\nTotal profit = " + totalProfitByWeight);
+        System.out.println("\nAscending Order of weight.\nTotal profit = " + totalProfitByProfit);
+        System.out.println(
+                "\nDescending Order of profit/weight ratio.\nTotal profit = " + totalProfitByRatio);
     }
-
-    private static Double knapsackSolve(SackObject[] objArray, Double max_cap) {
-
-        
-
-        for(int i=0;i<objArray.length;i++){
-            if(objArray[i].weight<=max_cap){
-                objArray[i].fraction=1.0;
-                max_cap=max_cap-objArray[i].weight;
-            }
-            else{
-                objArray[i].fraction = max_cap/objArray[i].weight;
-                break;
-            }
-        }
-        double total_profit=0.0;
-        System.out.println("solution set is ");
-        for(SackObject obj: objArray){
-            System.out.printf("%.2f, ",obj.fraction);
-            total_profit+= obj.fraction*obj.profit;
-        }
-
-        return total_profit;
-
-    }
-    
-}
-
-class SackObject{
-    Integer weight;
-    Integer profit;
-    Integer objid;
-    Double profit_weight_ratio;
-    Double fraction;
 }
