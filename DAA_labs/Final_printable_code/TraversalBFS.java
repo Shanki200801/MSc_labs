@@ -16,6 +16,7 @@ public class TraversalBFS {
     int front = 0;
 
     void rBFS(int[][] cost_matrix, int start_node) {
+        n = cost_matrix.length;
         this.visited[start_node] = true;
         if (!traversal_arr.contains(start_node))
             traversal_arr.add(start_node);

@@ -7,29 +7,32 @@ public class TraversalDFS {
 
     int n;
     boolean[] visited;
-    TraversalDFS(int n){     
-        visited= new boolean[n];
-    }   
+
+    TraversalDFS(int n) {
+        visited = new boolean[n];
+    }
+
     ArrayList<Integer> traversal_arr = new ArrayList<>();
-   
+
     int front = 0;
 
-    void DFS(int[][] cost_matrix,int start_node){
-        this.visited[start_node]=true;
+    void DFS(int[][] cost_matrix, int start_node) {
+        n = cost_matrix.length;
+        this.visited[start_node] = true;
         traversal_arr.add(start_node);
-        if(isUnvisted(visited)){
-            for(int i=0;i<n;i++){
-                if(cost_matrix[start_node][i]!=999 && !visited[i]){
-                    DFS(cost_matrix,i);
+        if (isUnvisted(visited)) {
+            for (int i = 0; i < n; i++) {
+                if (cost_matrix[start_node][i] != 999 && !visited[i]) {
+                    DFS(cost_matrix, i);
                 }
             }
         }
 
     }
-    
-    private static boolean isUnvisted(boolean[] arr){
-        for(boolean x:arr){
-            if(x==false){
+
+    private static boolean isUnvisted(boolean[] arr) {
+        for (boolean x : arr) {
+            if (x == false) {
                 return true;
             }
         }
@@ -59,5 +62,10 @@ public class TraversalDFS {
         TraversalDFS gs1 = new TraversalDFS(cost_matrix.length);
         gs1.DFS(cost_matrix, s_node);
         System.out.println("Traversal order in breadth first search is " + (gs1.traversal_arr));
+        if (isUnvisted(gs1.visited)) {
+            System.out.println("The graph is disjoint");
+        } else
+            System.out.println("All nodes are reachable");
+
     }
 }
