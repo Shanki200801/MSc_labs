@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Kruskals",
+            "request": "launch",
+            "mainClass": "Final_printable_code.Kruskals",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch NewKnapSack",
+            "request": "launch",
+            "mainClass": "Final_printable_code.NewKnapSack",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
             "name": "Launch MultiThreadApp",
             "request": "launch",
             "mainClass": "Printable_java.MultiThreadApp",

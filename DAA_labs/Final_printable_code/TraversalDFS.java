@@ -27,7 +27,6 @@ public class TraversalDFS {
                 }
             }
         }
-
     }
 
     private static boolean isUnvisted(boolean[] arr) {
