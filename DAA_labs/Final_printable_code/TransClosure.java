@@ -1,9 +1,16 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the transitive closure edge matrix
+ for a given matrix
+ ------------------------------------------------------------------*/
+
 package Final_printable_code;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//Edge class describes an edge with source and destination properties
 class Edge {
     int source, dest;
 
@@ -14,8 +21,10 @@ class Edge {
 }
 
 class Graph {
+    // contains a matrix which represents the graph
     List<List<Integer>> adjList = null;
 
+    // constructor to initialize the graph
     Graph(List<Edge> edges, int N) {
         adjList = new ArrayList<>(N);
 
@@ -48,6 +57,7 @@ public class TransClosure {
         System.out.println("Enter the number of edges initially");
         int n = sc.nextInt();
 
+        // taking all the edges present as input
         List<Edge> edges = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             System.out.println("Edge " + (i + 1));
@@ -59,12 +69,16 @@ public class TransClosure {
         }
 
         final int N = n + 1;
+        // initalizing the graph
         Graph graph = new Graph(edges, N);
+        // creating the byte array representing the output graph
         byte[][] C = new byte[N][N];
         System.out.println("TRANSITIVE CLOSURE:-\n");
         for (int v = 0; v < N; v++) {
             C[v][v] = 1;
+            // using depth first search on each vertex to visit all children possible
             DFS(graph, C, v, v);
+            // printing each line
             for (int u = 0; u < N; u++)
                 System.out.print(C[v][u] + " ");
             System.out.println();

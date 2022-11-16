@@ -1,3 +1,8 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the all pair shortest path using the
+ FloydWarshall algorithm (dynamic programming)
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.Scanner;
@@ -10,7 +15,9 @@ class FloydWarshall {
         for (i = 0; i < n; i++)
             for (j = 0; j < n; j++)
                 dist[i][j] = graph[i][j];
+        // k counts the cycles
         for (k = 0; k < n; k++) {
+            // traversing the graph with i and j
             for (i = 0; i < n; i++) {
                 for (j = 0; j < n; j++) {
                     if (dist[i][k] + dist[k][j] < dist[i][j])
@@ -42,6 +49,7 @@ class FloydWarshall {
 
         int[][] cost_matrix = new int[n][n];
 
+        // taking cost matrix of graph as input
         System.out.println("Enter the cost matrix");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {

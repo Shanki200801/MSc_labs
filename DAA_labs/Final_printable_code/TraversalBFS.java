@@ -1,3 +1,7 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find all reachable nodes from a source node using BFS
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.ArrayList;
@@ -23,10 +27,13 @@ public class TraversalBFS {
 
         for (int i = 0; i < n; i++) {
             if (cost_matrix[start_node][i] != 999 && !visited[i]) {
+                // add all unvisted neighbours to the traversal array
                 if (!traversal_arr.contains(i))
                     traversal_arr.add(i);
             }
         }
+        // if there are elements in the traversal array who have not been searched
+        // through yet then ..
         if (traversal_arr.size() > front + 1)
             rBFS(cost_matrix, traversal_arr.get(++front));
 

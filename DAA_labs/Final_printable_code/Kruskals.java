@@ -1,3 +1,8 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the minimum spanning tree of a given graph 
+ using the kruskal's algorithm
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.*;
@@ -31,17 +36,24 @@ public class Kruskals {
         public void kruskalMST() {
             PriorityQueue<Edge> pq = new PriorityQueue<>(allEdges.size(),
                     Comparator.comparingInt(o -> o.weight));
+            // adding all edges to a priority queue which sorts according to the edge
+            // weights
             pq.addAll(allEdges);
             int[] parent = new int[vertices];
+            // makes an array of all vertices
             makeSet(parent);
             ArrayList<Edge> mst = new ArrayList<>();
             int index = 0;
+            // start adding edges to the mst according to lowest weights
             while (index < vertices - 1) {
                 Edge edge = pq.remove();
                 int x_set = find(parent, edge.source);
                 int y_set = find(parent, edge.destination);
+                // if forms a loop do nothing
                 if (x_set == y_set) {
-                } else {
+                }
+                // else add them to mst
+                else {
                     mst.add(edge);
                     index++;
                     union(parent, x_set, y_set);
@@ -80,13 +92,14 @@ public class Kruskals {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // Input the number vertices and edges
         System.out.println("Enter the number of vertices initially");
         int n = sc.nextInt();
         Graph graph = new Graph(n);
 
         System.out.println("Enter the number of edges present");
         int edges = sc.nextInt();
-
+        // input the edges
         for (int i = 0; i < edges; i++) {
             System.out.println("Enter the source, destination and weight of edge " + (i + 1));
             int s = sc.nextInt();

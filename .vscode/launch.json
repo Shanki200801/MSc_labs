@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Practice",
+            "request": "launch",
+            "mainClass": "Practice",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
             "name": "Launch Kruskals",
             "request": "launch",
             "mainClass": "Final_printable_code.Kruskals",

@@ -1,3 +1,7 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the optimal solution for the given knapsack problem
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.*;

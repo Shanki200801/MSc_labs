@@ -1,3 +1,7 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the degree of a node for a given graph
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.ArrayList;
@@ -23,12 +27,14 @@ public class TraversalDFS {
         if (isUnvisted(visited)) {
             for (int i = 0; i < n; i++) {
                 if (cost_matrix[start_node][i] != 999 && !visited[i]) {
+                    // if the neighbour is not visited then call dfs on it
                     DFS(cost_matrix, i);
                 }
             }
         }
     }
 
+    // checks if there are unvisited vertices remaining
     private static boolean isUnvisted(boolean[] arr) {
         for (boolean x : arr) {
             if (x == false) {
@@ -61,6 +67,7 @@ public class TraversalDFS {
         TraversalDFS gs1 = new TraversalDFS(cost_matrix.length);
         gs1.DFS(cost_matrix, s_node);
         System.out.println("Traversal order in breadth first search is " + (gs1.traversal_arr));
+        // The visited array contains booleans for each vertices
         if (isUnvisted(gs1.visited)) {
             System.out.println("The graph is disjoint");
         } else

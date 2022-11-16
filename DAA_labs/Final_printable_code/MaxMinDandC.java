@@ -1,3 +1,8 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to find the maximum and the minimum of a given array using divide
+ and conquor technique for a given matrix
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.Scanner;
@@ -51,7 +56,10 @@ public class MaxMinDandC {
         System.out.println("Enter the number of elements in the array");
         int n = sc.nextInt();
         int[] array = new int[n];
-
+        System.out.println("Enter all the elements of the array");
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
+        }
         int[] mmarr = new int[2];
         mmarr = minMaxSearch(array, 0, array.length - 1);
 

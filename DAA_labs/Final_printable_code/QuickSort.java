@@ -1,3 +1,8 @@
+/*----------------------------------------------------------------
+ @Author: Shashank
+ Program to perform quick sort and arrage a given array in
+ ascending order
+ ------------------------------------------------------------------*/
 package Final_printable_code;
 
 import java.util.Arrays;
@@ -26,6 +31,7 @@ public class QuickSort {
         return unsorted;
     }
 
+    // outputs the position on which array is split
     private static int partition2(int[] unsorted, int low, int high) {
         int i = low, j = high;
 
