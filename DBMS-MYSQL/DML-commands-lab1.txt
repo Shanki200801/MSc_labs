@@ -1,0 +1,22 @@
+create table employee(
+    empID varchar(8) primary key,
+    name varchar(20) not null,
+    age integer not null,
+    gender enum('male','female','others'),
+    salary integer
+);
+
+insert into employee (empID,name,age,gender,salary) values
+    (1,"kaif",21,'male',500000),
+    (2,"anand",22,'male',500001),
+    (3,"amruta",23,'female',600000);
+    
+select * from employee;
+
+update employee set salary = salary+5000 where gender='female';
+
+select * from employee;
+
+delete from employee where empID=1;
+
+select * from employee;

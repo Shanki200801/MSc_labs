@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Solution",
+            "request": "launch",
+            "mainClass": "Solution",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch TwoSum",
+            "request": "launch",
+            "mainClass": "TwoSum",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "Final_codes.QuickSort",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
+            "name": "Launch ADAPractice",
+            "request": "launch",
+            "mainClass": "ADAPractice",
+            "projectName": "MSc Labs_9d41fb38"
+        },
+        {
+            "type": "java",
             "name": "Launch Practice",
             "request": "launch",
             "mainClass": "Practice",
